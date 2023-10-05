@@ -5,6 +5,7 @@
     border: none;
     outline: none;
     text-decoration: none;
+    overflow-y: hidden;
 }
 html{
     overflow-x: hidden;
@@ -63,7 +64,7 @@ nav{
       padding: 0 5vw;
     }
     .nav-links{
-      overflow: hidden;
+    overflow-y: hidden;
       position: absolute;
       right: 0;
       top:0;
