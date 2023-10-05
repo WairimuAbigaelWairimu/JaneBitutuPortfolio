@@ -15,32 +15,122 @@ body, html{
     background:  #D3D3D3;
     font-family: Arial, Helvetica, sans-serif;
 }
-
-.navbar{
-    background-color: #333;
-    overflow: hidden;
-    display: none;
-    color: white;
-}
-.navbar a{
-    float: right;
+/* Navigation starts */
+nav{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+  }
+  .nav-links {
+      display: flex;
+      justify-content: space-around;
+      width: 50%;
+      text-transform: uppercase;
+      float: right;
+      padding-top: 3em;
+  }
+  .nav-links a{
     display: block;
-    color: #f2f2f2;
-}
-.navbar a:hover{
-    background-color: #ddd;
-    color: black;
-}
-.navbar a.active{
-    background-color: #4caf50;
-    color: white;
-}
-.fa-bars, .fa-handshake{
+     text-transform: uppercase;
+     text-decoration: none;
+     color: #fff; 
+    transition:0.5s ease;
+    transform: translateX(0%);
+  }
+  .nav-links a:hover{
+    color: #D3D3D3;
+    letter-spacing: 5px;
+  }
+  .logo img{
+    border-radius: 50%;
+    width: 100px;
+    position: absolute;
+    top: 0;
+  }
+  .burger{
+    display: none;
+  }
+  .burger div{
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 5px;
+    transition:all 0.5s ease;
+  }
+  @media only screen and (max-width: 760px){
+     nav{
+      justify-content: space-between;
+      padding: 0 5vw;
+    }
+    .nav-links{
+      position: absolute;
+      right: 0;
+      top:0;
+      min-height:50vh;
+      background: #52e811;
+      display: flex;
+      flex-direction: column;
+      align-items: center;   
+      width: 50%;
+      margin: 0;
+      padding: 0;
+      transform: translateX(100%);
+      transition:All 0.5s ease-in;
+    }
+    .nav-links a{
+      opacity: 0;
+   
+    }
+    .burger{
+      display: block;
+    }
+   
+  }
+  @media only screen and (max-width: 640px){
+    nav{
+      justify-content: space-between;
+      padding: 0 5vw;
+    }
+  }
+  .nav-active{
+    transform: translateX(0);
+  }
+  @media only screen and (max-width: 460px){
+    .nav-links{
+      width: 100%;
+      transition:All 0.5s ease;
+    }
+  }
+  .nav-active{
+    transform: translateX(0);
+  }
+  @keyframes navLinkFade{
+    from{
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to{
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .toggle .line1{
+     transform: rotate(-45deg) translate(-5px,6px );
+  }
+  .toggle .line2{
+     opacity: 0;
+  }
+  .toggle .line3{
+     transform: rotate(45deg) translate(-5px,-6px );
+  }
+  /*Navigation ends */
+
+.fa-handshake{
     font-size: 2em;
+    padding: 1em;
 }
-.fa-bars{
-    margin: 1em 0 0 1em;
-}
+
+/* Hero section starts */
 .hero{
     width: 100%;
     background-color: #000080;
@@ -62,6 +152,9 @@ span{
 .text{
     padding: 1em;
 }
+.text p{
+    color: white;
+}
 .btn a{
     text-transform: capitalize;
     background-color: #52e811;
@@ -74,6 +167,7 @@ span{
     margin: 1em 0 3em 0;
     color: white;
 }
+/* Hero section ends */
 .about{
     width: 100%;
     background: white;
@@ -93,15 +187,16 @@ img{
 .quote{
     background-color: #000080;
     padding: 1.5em 1.5em 1.5em 2.4em;
-    position: absolute;
     bottom: 1em;
-    left: 6em;
     display: flex;
-    width: 50%;
-    height: 50%;
+    left: 6em;
+    width: auto;
+    height: auto;
     line-height: 2em;
-   font-style: italic;
-    
+   font-style: italic; 
+}
+.quote p{
+    color: white;
 }
 .quote::before{
     content: "“";
@@ -114,11 +209,9 @@ img{
 }
 .about-image span{
     font-family: 'Lora', serif;
-    position: absolute;
-    right: 0;
-    bottom: 0;
     font-size: 1.1rem;
     padding: 1em;
+    text-align: center;
 }
 .introduction{
     color: black;
@@ -133,8 +226,7 @@ img{
     color: grey;
 }
 .introduction h1{
-     width: 50%;
-     text-wrap: nowrap;
+     width: 100%;
     border-bottom: 1px solid #52e811;
     padding: 0.5em;
     border-width: 10px;
@@ -142,15 +234,21 @@ img{
 }
 .my-political-vision{
     text-align: center;
+    line-height: 2em;
 }
+.my-political-vision, h2, h4{
+    text-transform: capitalize;
+}
+
 .card{
    background-color: white;
    width: 60%;
   display: inline-block;
   padding: 1em;
   margin: 1em;
- 
+  line-height: 2em;
 }
+
 .card img{
     width: 90%;
     margin: 1em;
@@ -159,3 +257,70 @@ img{
     color: #52e811;
     text-transform: capitalize;
 }
+.contact-info{
+    background-color: white;
+    text-align: center;
+    line-height: 2em;
+    text-transform: capitalize;
+   padding: 1em;
+}
+.contact-info h4{
+    color: grey;
+    margin-top: 3em;
+}
+.contacts{
+    margin-top: 9em;
+}
+
+footer{
+    text-align: center;
+    padding: 2em;
+    background-color: #000080;
+    color: white;
+    line-height: 2em;
+    width: 100%;
+}
+.rights{
+    background-color: black;
+    width: 100%;
+    height: 50px;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+@media screen and (min-width: 600px) {
+   nav{
+    display: block;
+   }
+   .menu-bar{
+    display: none;
+   }
+   .hero{
+    padding-top: 7em;
+   }
+   .about{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   }
+   .introduction{
+    width: 50%;
+   }
+   .my-political-vision{
+    padding-top: 5em;
+   }
+   .cards{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 2em;
+   }
+   .card{
+    width: 40%;
+   }
+  }
+
+
+
+ 
