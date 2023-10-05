@@ -63,6 +63,7 @@ nav{
       padding: 0 5vw;
     }
     .nav-links{
+      overflow: hidden;
       position: absolute;
       right: 0;
       top:0;
@@ -290,9 +291,6 @@ footer{
 }
 
 @media screen and (min-width: 600px) {
-    body{
-        overflow-y: hidden;
-    }
    nav{
     display: block;
    }
