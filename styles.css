@@ -7,7 +7,6 @@
     text-decoration: none;
 }
 html{
-    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 body, html{
@@ -27,6 +26,7 @@ nav{
       width: 50%;
       text-transform: uppercase;
       padding-top: 3em;
+      float: right;
   }
   .nav-links a{
     display: block;
@@ -62,13 +62,11 @@ nav{
       padding: 0 5vw;
     }
     .nav-links{
-    overflow-y: hidden;
       position: absolute;
       right: 0;
       top:0;
       min-height:50vh;
       background: #52e811;
-      display: flex;
       flex-direction: column;
       align-items: center;   
       width: 50%;
@@ -290,12 +288,6 @@ footer{
 }
 
 @media screen and (min-width: 600px) {
-   nav{
-    display: block;
-   }
-   .menu-bar{
-    display: none;
-   }
    .hero{
     padding-top: 7em;
    }
