@@ -19,6 +19,7 @@ nav{
     display: flex;
     justify-content:space-around;
     align-items: center;
+    display: none;
   }
   .nav-links {
       display: flex;
@@ -26,7 +27,6 @@ nav{
       width: 50%;
       text-transform: uppercase;
       padding-top: 3em;
-      float: right;
   }
   .nav-links a{
     display: block;
@@ -59,7 +59,6 @@ nav{
   @media only screen and (max-width: 760px){
      nav{
       justify-content: space-between;
-      padding: 0 5vw;
     }
     .nav-links{
       position: absolute;
@@ -121,7 +120,7 @@ nav{
   .toggle .line3{
      transform: rotate(45deg) translate(-5px,-6px );
   }
-  /*Navigation ends */
+
 
 .fa-handshake{
     font-size: 2em;
